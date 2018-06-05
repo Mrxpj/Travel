@@ -45,3 +45,12 @@ export default {
 	  width: 100%
 	  height: 136px
 </style>
+
+<!-- //设置样式wrapper的原因是解决：因为当浏览器调成3G网速时，
+//banner图下面的文本在加载时会出现从banner图片的位置抖动下来。
+//设置高宽比为37.5%,不可以直接设置height为37.5%，
+ //这样子便成了相对于父级元素的高度
+
+//样式穿透 >>>
+//.wrapper下所有的子组件只要出现.swiper-pagination-bullet-active
+都变成改样式 -->
