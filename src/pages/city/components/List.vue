@@ -21,7 +21,12 @@
 					</div>
 				</div>
 			</div>
-			<div class="area" v-for="(item,key) of cities" :key="key">
+			<div 
+				class="area" 
+				v-for="(item,key) of cities" 
+				:key="key"
+				:ref="key"
+			>
 				<div class="title border-topbottom">{{key}}</div>
 				<div class="item-list">
 					<div 
@@ -43,10 +48,22 @@ export default {
 	name: 'CityList',
 	props: {
 		hot: Array,
-		cities: Object
+		cities: Object,
+		letter: String
 	},
 	mounted () {
 		this.scroll = new Bscroll(this.$refs.wrapper)
+	},
+	watch: {
+		letter() {
+			if (this.letter) {
+				//未加[0]之前得到一个循环area里数组，
+				//加了之后得到是一个类选择器.
+				const element = this.$refs[this.letter][0]
+				//element须为dom元素或者选择器
+				this.scroll.scrollToElement(element)
+			}
+		}
 	}
 }
 </script>
