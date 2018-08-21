@@ -9,6 +9,7 @@
 				class="search-item border-bottom" 
 				v-for="item of list"
 				:key="item.id"
+				@click="handleCityClick(item.name)"
 				>
 					{{ item.name }}
 				</li>
@@ -59,6 +60,14 @@ export default {
 				}
 				this.list = result
 			},100)
+		}
+	},
+	methods: {
+		handleCityClick (city) {
+			//dispatch是vuex的方法，指触发一个事件及派发函数
+			this.$store.dispatch('changeCity', city)
+			//push()编程式导航，就是跳转到指定页面
+			this.$router.push('/')
 		}
 	},
 	mounted () {

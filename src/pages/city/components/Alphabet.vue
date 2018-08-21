@@ -23,7 +23,7 @@ export default {
 		letters() {
 			const letters = []
 			for (let i in this.cities) {
-				letters.push(i)
+				letters.push(i) 
 			}
 			return letters
 		}
@@ -59,7 +59,7 @@ export default {
 				this.timer = setTimeout( () => {
 					//手指距离搜索框底部的距离
 					//e.touches得到的是一个touch事件数组
-					const touchY = e.touches[0].clientY -79
+					const touchY = e.touches[0].clientY - 79
 					// console.log(e.touches)
 					const index = Math.floor((touchY - this.startY) / 18)
 					if (index >= 0 && index < this.letters.length) {

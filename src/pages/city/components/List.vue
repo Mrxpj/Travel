@@ -5,7 +5,7 @@
 				<div class="title border-topbottom">当前城市</div>
 				<div class="button-list">
 					<div class="button-wrapper">
-						<div class="button">北京</div>
+						<div class="button">{{this.$store.state.city }}</div>
 					</div>
 				</div>
 			</div>
@@ -16,6 +16,7 @@
 						class="button-wrapper"
 						v-for="item of hot" 
 						:key="item.id"
+						@click="handleCityClick(item.name)"
 				 	>
 						<div class="button">{{item.name}}</div>
 					</div>
@@ -33,6 +34,7 @@
 						class="item border-bottom"
 						v-for="innerItem of item"
 						:key="innerItem.id"
+						@click="handleCityClick(innerItem.name)"
 					>
 						{{innerItem.name}}
 					</div>
@@ -51,9 +53,6 @@ export default {
 		cities: Object,
 		letter: String
 	},
-	mounted () {
-		this.scroll = new Bscroll(this.$refs.wrapper)
-	},
 	watch: {
 		letter() {
 			if (this.letter) {
@@ -64,6 +63,17 @@ export default {
 				this.scroll.scrollToElement(element)
 			}
 		}
+	},
+	methods: {
+		handleCityClick (city) {
+			//dispatch是vuex的方法，指触发一个事件及派发函数
+			this.$store.dispatch('changeCity', city)
+			//push()编程式导航，就是跳转到指定页面
+			this.$router.push('/')
+		}
+	},
+	mounted () {
+		this.scroll = new Bscroll(this.$refs.wrapper)
 	}
 }
 </script>
