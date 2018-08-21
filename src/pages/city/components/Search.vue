@@ -23,6 +23,7 @@
 
 <script>
 import Bscroll from 'better-scroll'
+import {mapState, mapMutations} from 'vuex'
 export default {
 	name: 'CitySearch',
 	props: {
@@ -65,10 +66,12 @@ export default {
 	methods: {
 		handleCityClick (city) {
 			//dispatch是vuex的方法，指触发一个事件及派发函数
-			this.$store.dispatch('changeCity', city)
+			// this.$store.dispatch('changeCity', city)
+			this.changeCity(city)
 			//push()编程式导航，就是跳转到指定页面
 			this.$router.push('/')
-		}
+		},
+		...mapMutations(['changeCity'])
 	},
 	mounted () {
 		this.scroll = new Bscroll(this.$refs.search)
