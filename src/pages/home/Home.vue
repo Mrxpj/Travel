@@ -59,7 +59,7 @@ export default {
 		this.lastCity = this.city
 		this.getHomeInfo()
 	},
-	activated() {//使用keep-live新增的生命周期函数
+	activated() {//使用keep-alive新增的生命周期函数
 		if(this.lastCity !== this.city) {
 			this.lastCity = this.city
 			this.getHomeInfo()
