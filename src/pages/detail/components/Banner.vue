@@ -1,24 +1,48 @@
 <template>
-	<div class="banner">
-		<img class="banner-img" src="http://img1.qunarzz.com/sight/p0/1603/3b/3bd311262ee06d8c90.img.jpg_600x330_cd2e3bf7.jpg">
-		<div class="banner-info">
-			<div class="banner-title">
-				广州长隆旅游度假区(AAAAA景区)
-			</div>
-			<div class="banner-number">
-				<span class="iconfont banner-icon">&#xe64a;</span>
-				16
-			</div>
-			<div class="banner-jt">
-				<span class="iconfont">&#xe624;</span>
+	<div>
+		<div class="banner" @click="handleShowGallary">
+			<img class="banner-img" src="http://img1.qunarzz.com/sight/p0/1603/3b/3bd311262ee06d8c90.img.jpg_600x330_cd2e3bf7.jpg">
+			<div class="banner-info">
+				<div class="banner-title">
+					广州长隆旅游度假区(AAAAA景区)
+				</div>
+				<div class="banner-number">
+					<span class="iconfont banner-icon">&#xe64a;</span>
+					16
+				</div>
+				<div class="banner-jt">
+					<span class="iconfont">&#xe624;</span>
+				</div>
 			</div>
 		</div>
+		<common-gallary 
+		:imgs="imgs" 
+		v-show="showGallary"
+		@close="handleGallaryClose"></common-gallary>
 	</div>
 </template>
 
 <script>
+import CommonGallary from 'common/gallary/Gallary.vue'
 export default {
 	name: 'Detail',
+	data () {
+		return {
+			imgs: ["http://img1.qunarzz.com/sight/p0/1603/3b/3bd311262ee06d8c90.img.jpg_r_800x800_41637b9b.jpg","http://img1.qunarzz.com/sight/p0/201403/07/452bd2d46925768793ff15a853899211.jpg_r_800x800_351f3cc7.jpg"],
+			showGallary: false
+		}
+	},
+	components: {
+		CommonGallary
+	},
+	methods: {
+		handleShowGallary () {
+			this.showGallary = true
+		},
+		handleGallaryClose () {
+			this.showGallary = false
+		}
+	}
 }
 </script>
 
