@@ -41,9 +41,9 @@ export default {
 	    	font-size: .3rem
 	  .header-input
 	    flex: 1
-	    height: .64rem
-	    line-height: .64rem
-	    margin-top: .12rem
+	    height: .6rem
+	    line-height: .6rem
+	    margin-top: .1rem
 	    margin-left: .2rem
 	    padding-left: .2rem
 	    background: #fff

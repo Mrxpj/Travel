@@ -10,9 +10,6 @@
 					<span class="iconfont banner-icon">&#xe64a;</span>
 					16
 				</div>
-				<div class="banner-jt">
-					<span class="iconfont">&#xe624;</span>
-				</div>
 			</div>
 		</div>
 		<common-gallary 
@@ -80,18 +77,6 @@ export default {
 	  	 	line-height: .46rem
 	  	 	border-radius: .2rem
 	  	 	font-size: .36rem
-	  	 	background: rgba(0, 0, 0, .5)
-	  	 	color: #fff
-	  	 .banner-jt
-	  	 	position: absolute
-	  	 	left: .2rem
-	  	 	right: 0
-	  	 	top: -3.2rem
-	  	 	width: .85rem
-	  	 	height: .85rem
-	  	 	text-align: center
-	  	 	line-height: .85rem
-	  	 	border-radius: 50%
 	  	 	background: rgba(0, 0, 0, .5)
 	  	 	color: #fff
 	  	 	
