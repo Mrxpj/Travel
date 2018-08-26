@@ -15,4 +15,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-jiantouarrow486:before { content: "\e6aa"; }
+
+.icon-tupian:before { content: "\e64a"; }
+
+.icon-fanhui:before { content: "\e624"; }
+
+.icon-jiantouyou:before { content: "\e62d"; }
+
+.icon-sousuo:before { content: "\e632"; }
+
 
